@@ -1,86 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp">
-
-    <EditText
-        android:id="@+id/edit_text_url"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Введіть URL аудіо/відео"
-        android:minHeight="48dp" />
-
-    <Button
-        android:id="@+id/button_play_url"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Відтворити з URL" />
+    android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center"
+        android:background="#FFFFFF">
 
-        <Button
-            android:id="@+id/button_pick_audio"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Обрати Аудіо" />
+            android:text="Сенсори пристрою"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="32dp"/>
 
-        <Button
-            android:id="@+id/button_pick_video"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+        <TextView
+            android:id="@+id/text_light"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Обрати Відео" />
+            android:text="Освітлення: очікування..."
+            android:textSize="18sp"
+            android:layout_marginBottom="16dp"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/text_proximity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Наближення: очікування..."
+            android:textSize="18sp"
+            android:textAlignment="center"/>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/text_view_status"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Статус: Очікування"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        android:gravity="center" />
 
     <LinearLayout
+        android:id="@+id/screen_off_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="8dp"
-        android:gravity="center">
+        android:layout_height="match_parent"
+        android:background="#000000"
+        android:gravity="center"
+        android:visibility="gone"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/button_play"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Play" />
+            android:text="Екран вимкнено"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
 
-        <Button
-            android:id="@+id/button_pause"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pause" />
-
-        <Button
-            android:id="@+id/button_stop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Stop" />
+            android:text="(Спрацював датчик наближення)"
+            android:textColor="#AAAAAA"
+            android:textSize="16sp"
+            android:layout_marginTop="8dp"/>
     </LinearLayout>
 
-    <VideoView
-        android:id="@+id/video_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp"
-        android:visibility="gone" />
-
-</LinearLayout>
+</FrameLayout>
